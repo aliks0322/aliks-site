@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Палитра по мотивам rband.pro: космос + бумага + красная точка */
+  --v2-space-1: #060a1c;
+  --v2-space-2: #0a1233;
+  --v2-ink: #0a0a0b;
+  --v2-paper: #ffffff;
+  --v2-fog: #ededed;
+  --v2-line: #dcdce0;
+  --v2-text: #141416;
+  --v2-muted: #55555c;
+  --v2-red: #cf2f2f;
+  --v2-red-dark: #b02525;
+}
+
+body {
+  background: var(--v2-paper);
+  color: var(--v2-text);
+}
+
+/* ---------- layout ---------- */
+
+.v2-container {
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .v2-container {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* ---------- фирменная красная точка ---------- */
+
+.v2-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--v2-red);
+  flex-shrink: 0;
+}
+
+.v2-dot-fixed {
+  position: fixed;
+  top: 0.9rem;
+  left: 0.9rem;
+  z-index: 60;
+  pointer-events: none;
+}
+
+/* ---------- типографика ---------- */
+
+.v2-display {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.04;
+}
+
+.v2-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Гигантское контурное слово (как у донора) */
+.v2-outline-word {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(10, 10, 11, 0.22);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ---------- кнопки-пилюли ---------- */
+
+.v2-btn-black {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: var(--v2-ink);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease-out, background 0.2s ease-out;
+}
+
+.v2-btn-black:hover {
+  background: var(--v2-red);
+  transform: translateY(-2px);
+}
+
+.v2-btn-red {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: var(--v2-red);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease-out, background 0.2s ease-out;
+}
+
+.v2-btn-red:hover {
+  background: var(--v2-red-dark);
+  transform: translateY(-2px);
+}
+
+.v2-link-more {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--v2-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.2s ease-out;
+}
+
+.v2-link-more:hover {
+  color: var(--v2-red);
+}
+
+/* ---------- карточки и панели ---------- */
+
+.v2-card {
+  background: var(--v2-paper);
+  border: 1px solid var(--v2-line);
+  border-radius: 1rem;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+
+.v2-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px -18px rgba(10, 10, 11, 0.18);
+}
+
+.v2-panel-fog {
+  background: var(--v2-fog);
+  border-radius: 1.5rem;
+}
+
+/* ---------- космический фон hero ---------- */
+
+.v2-space {
+  background:
+    radial-gradient(1100px 620px at 78% -10%, #23306e 0%, transparent 60%),
+    radial-gradient(900px 700px at -10% 110%, #141d49 0%, transparent 55%),
+    linear-gradient(160deg, var(--v2-space-2) 0%, var(--v2-space-1) 55%, #03040c 100%);
+}
+
+.v2-star {
+  position: absolute;
+  border-radius: 999px;
+  background: #fff;
+  pointer-events: none;
+}
+
+.v2-bokeh {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* ---------- форма ---------- */
+
+.v2-input {
+  width: 100%;
+  border: 1px solid var(--v2-line);
+  border-radius: 0.9rem;
+  background: #fff;
+  padding: 0.85rem 1.1rem;
+  color: var(--v2-text);
+  font-size: 0.9375rem;
+  transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.v2-input::placeholder {
+  color: #9a9aa2;
+}
+
+.v2-input:focus {
+  outline: none;
+  border-color: var(--v2-ink);
+  box-shadow: 0 0 0 3px rgba(10, 10, 11, 0.08);
+}
+
+.v2-input[aria-invalid='true'] {
+  border-color: var(--v2-red);
+}
+
+/* ---------- прочее ---------- */
+
+::selection {
+  background: var(--v2-red);
+  color: #fff;
+}
