@@ -85,3 +85,76 @@ body {
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+
+/* === Свечение и бегущая волна на главных кнопках === */
+@keyframes aliks-wave {
+  0% {
+    transform: translateX(-140%) skewX(-20deg);
+  }
+  55%,
+  100% {
+    transform: translateX(320%) skewX(-20deg);
+  }
+}
+
+@keyframes aliks-pulse-pink {
+  0%,
+  100% {
+    box-shadow: 0 0 16px rgba(232, 68, 124, 0.45), 0 4px 18px rgba(232, 68, 124, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 34px rgba(232, 68, 124, 0.7), 0 4px 26px rgba(232, 68, 124, 0.4);
+  }
+}
+
+@keyframes aliks-pulse-dark {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(16, 155, 237, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 26px rgba(16, 155, 237, 0.55);
+  }
+}
+
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  animation: aliks-pulse-pink 3s ease-in-out infinite;
+}
+
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 45%;
+  background: linear-gradient(
+    105deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  transform: translateX(-140%) skewX(-20deg);
+  animation: aliks-wave 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.btn-glow:hover {
+  animation-duration: 1.6s;
+}
+
+.btn-glow-outline {
+  animation: aliks-pulse-dark 3s ease-in-out infinite;
+}
+
+.btn-glow-outline::after {
+  background: linear-gradient(
+    105deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+}

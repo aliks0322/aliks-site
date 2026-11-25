@@ -54,13 +54,13 @@ export function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
               href="#contact"
-              className="rounded-full bg-[#e8447c] px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#c92c63]"
+              className="btn-glow rounded-full bg-[#e8447c] px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#c92c63]"
             >
               Обсудить проект
             </a>
             <a
               href="#works"
-              className="rounded-full border border-[#17181c] px-7 py-3.5 text-base font-semibold text-[#17181c] transition-colors hover:bg-[#17181c] hover:text-white"
+              className="btn-glow btn-glow-outline rounded-full bg-[#109bed] px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#0d86c9]"
             >
               Смотреть работы
             </a>
